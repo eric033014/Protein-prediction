@@ -24,11 +24,12 @@ urlpatterns = [
 from django.conf.urls import url,include
 from django.contrib import admin
 from django.conf import settings
-from . import search2
+from Protein.views import search_post,result,download_file
 
 urlpatterns = [
-    url(r'^search-post$', search2.search_post),
-    url(r'^result$',search2.result),
-    url(r'^result/download_file$',search2.download_file),
+    url(r'^admin/',include(admin.site.urls)),
+    url(r'^search-post$', search_post),
+    url(r'^result$',result),
+    url(r'^result/download_file$',download_file),
    # url(r'^', include('course.urls', namespace='course')),
 ]
