@@ -21,10 +21,14 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
 """
-from django.conf.urls import url
+from django.conf.urls import url,include
+from django.contrib import admin
+from django.conf import settings
 from . import search2
 
 urlpatterns = [
     url(r'^search-post$', search2.search_post),
     url(r'^result$',search2.result),
+    url(r'^result/download_file$',search2.download_file),
+   # url(r'^', include('course.urls', namespace='course')),
 ]

@@ -23,7 +23,22 @@
   </div>
 </nav>
 <div>
+	<a href="/result/download_file" download="" id="download">檔案連結</a>
 	<h1>{{data}}</h1>
 </div>
+<script>
+		var url=location.search;
+		var getSearch="";
+		var answer="";
+		if (url.indexOf("?") != -1) {
+			getSearch = url.split("?");
+			console.log(getSearch);
+			answer=getSearch[1].split("=");
+		}
+	temp=document.getElementById("download").href;
+	document.getElementById("download").href=temp+"?id="+answer[1];
+	document.getElementById("download").download=answer[1]+".txt";
+	console.log(document.getElementById("download").href);
+	</script>
 </body>
 </html>
